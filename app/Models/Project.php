@@ -17,4 +17,8 @@ class Project extends Model
         'chief',
         'members'
     ];
+
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }
