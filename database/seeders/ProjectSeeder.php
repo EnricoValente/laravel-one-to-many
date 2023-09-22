@@ -23,11 +23,11 @@ class ProjectSeeder extends Seeder
                 'chief'=>fake()->firstName(),
                 'members'=>fake()->randomDigitNotNull()
 
-
-
-
-
             ]);
         }
     }
 }
+
+
+
+
