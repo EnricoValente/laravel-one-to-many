@@ -13,6 +13,8 @@
                     <th scope="col">End Date</th>
                     <th scope="col">Chief</th>
                     <th scope="col">Members</th>
+                    <th scope="col">Types</th>
+
                     <th scope="col">Azioni</th>
 
                   </tr>
@@ -28,6 +30,8 @@
                           <td>{{$project->end_date}}</td>
                           <td>{{$project->chief}}</td>
                           <td>{{$project->members}}</td>
+                          <td>{{$project->type->name}}</td>
+
                           <td>
                             <a href="{{route('admin.projects.create')}}" class="btn btn-primary">
                               Aggiungi
