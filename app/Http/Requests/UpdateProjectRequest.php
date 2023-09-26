@@ -27,7 +27,8 @@ class UpdateProjectRequest extends FormRequest
             'start_date'=>'required|date',
             'end_date'=>'required|date',
             'chief'=>'required|max:50',
-            'chief'=>'required|numeric',
+            'members'=>'required|numeric',
+            'type_id'=>'required|exists:types,id'
         ];
     }
 }

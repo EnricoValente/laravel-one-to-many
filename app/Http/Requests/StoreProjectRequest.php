@@ -28,6 +28,7 @@ class StoreProjectRequest extends FormRequest
             'end_date'=>'required|date',
             'chief'=>'required|max:50',
             'members'=>'required|numeric',
+            'type_id'=>'required|exists:types,id'
         ];
     }
 

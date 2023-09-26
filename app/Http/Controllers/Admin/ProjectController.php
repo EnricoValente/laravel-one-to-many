@@ -35,15 +35,16 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        $formaData=$request->validated();
+        $formData=$request->validated();
 
         Project::create([
-            'title'=>$formaData['title'],
-            'description'=>$formaData['description'],
-            'start_date'=>$formaData['start_date'],
-            'end_date'=>$formaData['end_date'],
-            'chief'=>$formaData['chief'],
-            'members'=>$formaData['members'],
+            'title'=>$formData['title'],
+            'description'=>$formData['description'],
+            'start_date'=>$formData['start_date'],
+            'end_date'=>$formData['end_date'],
+            'chief'=>$formData['chief'],
+            'members'=>$formData['members'],
+            'type_id'=>$formData['type_id']
         ]);
 
         return redirect()->route('admin.projects.index');
@@ -84,9 +85,10 @@ class ProjectController extends Controller
             'end_date'=>$data['title'],
             'chief'=>$data['chief'],
             'members'=>$data['members'],
+            'type_id'=>$data['type_id']
         ]);
 
-        return redirect()->route('admin.index',compact('project'));
+        return redirect()->route('admin.projects.index',compact('project'));
     }
 
     /**
