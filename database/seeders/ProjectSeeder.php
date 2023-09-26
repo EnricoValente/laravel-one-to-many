@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
+use App\Models\Type;
 class ProjectSeeder extends Seeder
 {
     /**
@@ -14,6 +15,7 @@ class ProjectSeeder extends Seeder
     {
         Project::truncate();
 
+        $randomType=Type::inRandomOrder()->first();
         for ($i=0; $i < 20; $i++) { 
             Project::create([
                 'title'=>fake()->sentence(3),
@@ -21,7 +23,8 @@ class ProjectSeeder extends Seeder
                 'start_date'=>fake()->dateTimeBetween('-1 year', 'now'),
                 'end_date'=>fake()->dateTimeBetween('now' , '+1year'),
                 'chief'=>fake()->firstName(),
-                'members'=>fake()->randomDigitNotNull()
+                'members'=>fake()->randomDigitNotNull(),
+                'type_id'=>$randomType->id
 
             ]);
         }

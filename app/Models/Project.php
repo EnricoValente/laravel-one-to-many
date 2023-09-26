@@ -15,7 +15,8 @@ class Project extends Model
         'start_date',
         'end_date',
         'chief',
-        'members'
+        'members',
+        'type_id'
     ];
 
     public function type() {
